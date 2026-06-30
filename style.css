@@ -1,0 +1,294 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  background: linear-gradient(135deg, #f8fbff 0%, #fff7ed 100%);
+  color: #263238;
+}
+
+header {
+  padding: 28px 20px 18px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+  color: #2463eb;
+}
+
+header p {
+  margin: 0;
+  color: #64748b;
+}
+
+.container {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto 32px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 18px;
+}
+
+.card {
+  background: rgba(255,255,255,.92);
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, .08);
+  padding: 18px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.month-title {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+button {
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: #2463eb;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button.secondary {
+  background: #e0ecff;
+  color: #1d4ed8;
+}
+
+button.danger {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.main-column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #e5e7eb;
+  gap: 1px;
+}
+
+.weekday, .day {
+  background: white;
+  min-height: 96px;
+  padding: 8px;
+}
+
+.weekday {
+  min-height: auto;
+  text-align: center;
+  font-weight: 800;
+  color: #475569;
+  background: #f8fafc;
+}
+
+.day.muted {
+  background: #f8fafc;
+  color: #94a3b8;
+}
+
+.day.today {
+  outline: 3px solid #fbbf24;
+  outline-offset: -3px;
+}
+
+.date-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.add-mini {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border-radius: 999px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.lesson {
+  margin-top: 5px;
+  padding: 5px 6px;
+  border-radius: 9px;
+  background: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.lesson strong {
+  display: block;
+  color: #1e40af;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+h2 {
+  margin: 0 0 14px;
+  font-size: 20px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 6px;
+  font-weight: 700;
+  color: #334155;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font: inherit;
+  background: white;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.edit-hint {
+  margin-top: 10px;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.records-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.stat-item, .record-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.subject-group {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.subject-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.subject-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #1e40af;
+}
+
+.subject-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.record-item {
+  align-items: flex-start;
+  background: white;
+}
+
+.record-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.record-actions button {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.count {
+  min-width: 54px;
+  text-align: center;
+  background: #dcfce7;
+  color: #166534;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-weight: 800;
+}
+
+.empty {
+  color: #94a3b8;
+  text-align: center;
+  padding: 16px 0;
+}
+
+@media (max-width: 860px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .weekday, .day {
+    min-height: 82px;
+    padding: 6px;
+  }
+  header h1 {
+    font-size: 26px;
+  }
+}
